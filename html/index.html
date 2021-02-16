@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container" v-bind:class="[position, float]" v-if = "visible">
+            <div class="title"><p>{{App.titleMenu}}</p></div>
+			<div v-for="item, index in menu" class="menu" v-bind:class="{ 'active': item.active}">
+				<p><span v-html="item.label"></span></p>
+			</div>	
+        </div>
+		<script src="./scripts/listener.js" type="text/javascript"></script>
+	</body>
+</html>

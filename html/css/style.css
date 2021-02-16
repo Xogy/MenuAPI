@@ -1,0 +1,91 @@
+.container { 
+	width: 280px; 
+	height: auto; 
+	background: rgb(228,228,228); 
+    background: linear-gradient(0deg, rgba(99, 99, 99, 0.54) 0%, rgba(0, 0, 0, 0.48) 100%);
+}
+
+.container.top{
+	position: absolute;
+    top: 20px;
+}
+
+.container.bottom{
+	position: absolute;
+    bottom: 20px;
+}
+
+.container.bottom.right{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.container.bottom.left{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.container.top.right{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.container.top.left{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.container.middle.right{
+    position: absolute;
+    bottom: 40%;
+    right: 20px;
+}
+
+.container.middle.left{
+    position: absolute;
+	bottom: 40%;
+    left: 20px;
+}
+
+.title { 
+	width: 100%; 
+	padding: 1px 0px; 
+	text-align: center; 
+	background: rgb(13,37,91); 
+	background: linear-gradient(94deg, rgba(13,37,91,1) 0%, rgba(101,146,247,1) 100%);  
+}
+.title p { 
+	font-family: Montserrat, Calibri, Arial; 
+	font-size: 25px; 
+	color: #fff; 
+	font-weight: bold; 
+	text-shadow: 1px 1px 4px #000000; 
+}
+
+.menu { 
+	width: 100%; 
+    padding: 9px 0px;
+}
+.menu p { 
+	padding: 0;
+	margin: 0;
+	font-family: Montserrat, Calibri, Arial; 
+	font-size: 18px; 
+	color: #fff; 
+	text-align: center; 
+	text-shadow: 1px 1px 4px #000000;
+}
+
+.menu.active { 
+	width: 100%;
+	background: #2f37389c; 
+}
+.menu.active p {
+    font-family: Montserrat, Calibri, Arial;
+    color: #fff;
+    text-align: center;
+}
