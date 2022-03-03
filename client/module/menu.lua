@@ -1,11 +1,21 @@
 function CreateMenu(identifier)
     local self = {}
+    self.isOpen_ = false
     local _menuTitle = "RCORE"
+    self.identifier_ = identifier
     local _properties = {
         float = "right",
         position = "middle",
     }
     local items = {}
+    --------------
+    self.GetIdentifier = function()
+        return self.identifier_
+    end
+
+    self.IsOpen = function()
+        return self.isOpen_
+    end
     --------------
     self.SetMenuTitle = function(title)
         _menuTitle = title
@@ -29,6 +39,10 @@ function CreateMenu(identifier)
 
     self.OnOpenEvent = function(cb)
         On(identifier, "open", cb)
+    end
+
+    self.OnExitEvent = function(cb)
+        On(identifier, "exit", cb)
     end
 
     self.OnChangeItemEvent = function(cb)
@@ -60,6 +74,7 @@ function CreateMenu(identifier)
             MenuTitle = _menuTitle,
             Properties = _properties,
             Items = items,
+            self = self,
         }
         SendNUIMessage({ type = "reset" })
         SendNUIMessage({ type = "title", title = _menuTitle })
@@ -72,19 +87,23 @@ function CreateMenu(identifier)
         end
         SendNUIMessage({ type = "ui", identifier = identifier, properties = _properties, status = true })
         CallOn(identifier, "open")
+        self.isOpen_ = true
     end
     --------------
     self.Close = function()
         SendNUIMessage({ type = "ui", status = false })
         CallOn(identifier, "close")
+        self.isOpen_ = false
     end
     --------------
     self.Destroy = function()
         SendNUIMessage({ type = "ui", status = false })
+        CallOn(identifier, "exit")
         CachedMenu[identifier] = nil
         Events[identifier] = nil
     end
     return self
 end
+
 
 exports("CreateMenu", CreateMenu)

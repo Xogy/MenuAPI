@@ -5,6 +5,8 @@ ValidEvents = {
     ["open"] = true,
     ["changeitem"] = true,
     ["selectitem"] = true,
+    ["exit"] = true,
+    ["inputtext"] = true,
 }
 
 function ValidateEvents(eventName)

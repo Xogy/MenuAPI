@@ -1,8 +1,16 @@
 .container { 
-	width: 280px; 
-	height: auto; 
-	background: rgb(228,228,228); 
+    min-width: 280px;
+    max-width: 371px;
+    width: auto;
+	height: auto;
+	background: rgb(228,228,228);
     background: linear-gradient(0deg, rgba(99, 99, 99, 0.54) 0%, rgba(0, 0, 0, 0.48) 100%);
+
+    max-width: 279px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
 }
 
 .container.top{
@@ -45,47 +53,117 @@
     right: 20px;
 }
 
+.container.middle_screen.middle_screen{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 .container.middle.left{
     position: absolute;
 	bottom: 40%;
     left: 20px;
 }
 
-.title { 
-	width: 100%; 
-	padding: 1px 0px; 
-	text-align: center; 
-	background: rgb(13,37,91); 
-	background: linear-gradient(94deg, rgba(13,37,91,1) 0%, rgba(101,146,247,1) 100%);  
+.title {
+    width: 100%;
+    padding: 1px 0px;
+    text-align: center;
+    background: rgb(13,37,91);
+    background: linear-gradient(94deg, rgba(13,37,91,1) 0%, rgba(101,146,247,1) 100%);
 }
-.title p { 
-	font-family: Montserrat, Calibri, Arial; 
-	font-size: 25px; 
-	color: #fff; 
-	font-weight: bold; 
-	text-shadow: 1px 1px 4px #000000; 
+.title p {
+    font-family: Montserrat, Calibri, Arial;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px #000000;
+    padding: 13px;
+    overflow-wrap: break-word;
 }
 
-.menu { 
-	width: 100%; 
+.menu {
+	width: 100%;
     padding: 9px 0px;
 }
-.menu p { 
+.menu p {
 	padding: 0;
 	margin: 0;
-	font-family: Montserrat, Calibri, Arial; 
-	font-size: 18px; 
-	color: #fff; 
-	text-align: center; 
+	font-family: Montserrat, Calibri, Arial;
+	font-size: 18px;
+	color: #fff;
+	text-align: center;
 	text-shadow: 1px 1px 4px #000000;
 }
 
-.menu.active { 
+.menu.active {
 	width: 100%;
-	background: #2f37389c; 
+	background: #2f37389c;
 }
 .menu.active p {
     font-family: Montserrat, Calibri, Arial;
     color: #fff;
     text-align: center;
+}
+
+.button p{
+    font-family: Montserrat, Calibri, Arial;
+    text-align: center;
+    position: relative;
+    top: 7px;
+    color: white;
+}
+
+.button:hover{
+    background: #000000a6;
+    transition: background-color 200ms linear;
+}
+
+.button{
+    position: relative;
+    left: 6px;
+    bottom: 3px;
+    background: #00000057;
+    height: 40px;
+    width: 121px;
+    float: left;
+    margin: 6px;
+    border-radius: 8px;
+    transition: background-color 200ms linear;
+}
+
+#input input{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 90%;
+    text-align: center;
+}
+
+#scrolldiv{
+    max-height: 14vw;
+    overflow: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

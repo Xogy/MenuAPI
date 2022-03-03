@@ -1,4 +1,20 @@
---  click on item
+--------------- Input related only ----------------
+-- User send input froom html
+RegisterNUICallback("inputmethod", function(data)
+    if CachedMenu[data.identifier] then
+        CallOn(data.identifier, "inputtext", data.message)
+    end
+end)
+
+-- User send input froom html
+RegisterNUICallback("close", function(data)
+    local menu = CachedMenu[data.identifier]
+    if menu then
+        menu.self.Close()
+    end
+end)
+--------------- Menu related only ----------------
+-- click on item
 RegisterNUICallback("clickItem", function(data)
     local identifier = data.identifier
     local menuData = CachedMenu[identifier].Items[data.index]

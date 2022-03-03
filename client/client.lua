@@ -1,8 +1,8 @@
 CachedMenu = {}
 
 function RegisterKey(fc, uniqid, description, key)
-    RegisterCommand(uniqid, fc, false)
-    RegisterKeyMapping(uniqid, description, 'keyboard', key)
+    RegisterCommand(uniqid .. GetCurrentResourceName(), fc, false)
+    RegisterKeyMapping(uniqid .. GetCurrentResourceName(), description, 'keyboard', key)
 end
 --------------
 -- Sending info about changing item in menu
